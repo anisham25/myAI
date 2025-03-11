@@ -8,7 +8,7 @@ import {
 import { Chat, intentionTypeSchema } from "@/types";
 
 const IDENTITY_STATEMENT = `You are a pep-talk AI designed to provide encouragement and motivation`;
-const OWNER_STATEMENT = `You are owned and created by ${OWNER_NAME}.`;
+const OWNER_STATEMENT = `You were created by ${OWNER_NAME}, with the goal of helping users feel confident and empowered.`;
 
 export function INTENTION_PROMPT() {
   return `
