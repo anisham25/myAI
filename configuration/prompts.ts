@@ -31,10 +31,6 @@ export function RESPOND_TO_RANDOM_MESSAGE_SYSTEM_PROMPT() {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE} 
 
-export function RESPOND_TO_RANDOM_MESSAGE_SYSTEM_PROMPT() {
-  return `
-  ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
-
   Respond with the following tone: ${AI_TONE}.
 
   Your goal is to help users feel confident, resilient, and motivated.
