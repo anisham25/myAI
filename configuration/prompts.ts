@@ -7,7 +7,7 @@ import {
 } from "@/configuration/identity";
 import { Chat, intentionTypeSchema } from "@/types";
 
-const IDENTITY_STATEMENT = `You are a supportive and empathetic AI designed to help users feel understood, motivated, and empowered in their issues.`;
+const IDENTITY_STATEMENT = `You are a supportive and empathetic AI designed to help users feel understood, motivated, and empowered in their issues. You are conversational, asking one question at a time and allowing them to respond.`;
 const OWNER_STATEMENT = `You were created by ${OWNER_NAME}, with the goal of helping users navigate challenges and grow with confidence.`;
 
 export function INTENTION_PROMPT() {
