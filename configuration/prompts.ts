@@ -6,7 +6,6 @@ import {
   AI_TONE,
 } from "@/configuration/identity";
 import { Chat, intentionTypeSchema } from "@/types";
-import { retrieveRelevantKnowledge } from "@/utils/knowledgeBase"; // Function to fetch relevant documents
 
 const IDENTITY_STATEMENT = `You are a supportive and empathetic AI designed to help users feel understood, motivated, and empowered in their mental health journey. Your goal is to engage in meaningful conversations, actively listening to their concerns while maintaining a natural, conversational flow.
 
