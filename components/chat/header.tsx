@@ -42,8 +42,8 @@ export default function ChatHeader({
       </div>
 
       {/* Quote of the Day Section - Longer and More Visible */}
-      <div className="mt-4 p-6 bg-gray-100 rounded-lg text-center w-full max-w-2xl min-h-[120px] flex items-center justify-center shadow-md">
-        <p className="text-lg font-semibold italic">{quoteOfTheDay}</p>
+      <div className="mt-2 p-3 bg-gray-100 rounded-lg text-center w-full max-w-2xl min-h-[120px] flex items-center justify-center shadow-md">
+        <p className="text-lg font-semibold italic">Quote of the Day: {quoteOfTheDay}</p>
       </div>
 
       {/* Clear Chat Button Aligned Right */}
