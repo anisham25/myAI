@@ -31,7 +31,7 @@ export default function ChatHeader({
   }, []);
 
   return (
-    <div className="z-50 mb-25 flex flex-col items-center fixed top-0 w-full p-4 bg-white shadow-md">
+    <div className="z-50 mb-40 flex flex-col items-center fixed top-0 w-full p-4 bg-white shadow-md">
       {/* Peppa Logo and Name on the Same Line */}
       <div className="flex items-center gap-2">
         <AILogo />
@@ -39,8 +39,8 @@ export default function ChatHeader({
       </div>
 
       {/* Smaller Quote Section */}
-      <div className="mt-2 px-3 py-2 bg-gray-100 rounded-md text-center w-full w-3/4 shadow-sm">
-        <p className="text-xs font-medium italic"><b>Quote of the Day:</b>{quoteOfTheDay}</p>
+      <div className="mt-2 px-3 py-2 bg-gray-100 rounded-md text-center w-full w-1/4 shadow-sm">
+        <p className="text-xs font-medium italic"><b>Quote of the Day: </b>{quoteOfTheDay}</p>
       </div>
 
       {/* Clear Chat Button Positioned Right */}
