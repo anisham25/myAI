@@ -34,30 +34,30 @@ export default function ChatHeader({
   }, []);
 
   return (
-    <div className="z-10 flex flex-col justify-center items-center fixed top-0 w-full p-5 bg-white shadow-[0_10px_15px_-3px_rgba(255,255,255,1)]">
-      <div className="flex w-full items-center justify-between">
-        <div className="flex-1 flex justify-center items-center gap-2">
-          <AILogo />
-          <p>{CHAT_HEADER}</p>
-        </div>
-        <div className="flex-0 w-[100px] flex justify-end items-center">
-          <Button
-            onClick={clearMessages}
-            className="gap-2 shadow-sm"
-            variant="outline"
-            size="sm"
-          >
-            <EraserIcon className="w-4 h-4" />
-            <span>{CLEAR_BUTTON_TEXT}</span>
-          </Button>
-        </div>
+    <div className="z-50 flex flex-col items-center text-center fixed top-0 w-full p-5 bg-white shadow-md">
+      {/* Peppa's Icon & Name Centered */}
+      <div className="flex flex-col items-center">
+        <AILogo />
+        <p className="font-semibold text-lg">{CHAT_HEADER}</p>
       </div>
 
-      {/* Quote of the Day Section */}
-      <div className="mt-2 p-3 bg-gray-100 rounded-lg text-center w-full max-w-lg">
-        <p className="text-sm font-semibold italic">{quoteOfTheDay}</p>
+      {/* Quote of the Day Section - Longer and More Visible */}
+      <div className="mt-4 p-6 bg-gray-100 rounded-lg text-center w-full max-w-2xl min-h-[120px] flex items-center justify-center shadow-md">
+        <p className="text-lg font-semibold italic">{quoteOfTheDay}</p>
+      </div>
+
+      {/* Clear Chat Button Aligned Right */}
+      <div className="absolute top-5 right-5">
+        <Button
+          onClick={clearMessages}
+          className="gap-2 shadow-sm"
+          variant="outline"
+          size="sm"
+        >
+          <EraserIcon className="w-4 h-4" />
+          <span>{CLEAR_BUTTON_TEXT}</span>
+        </Button>
       </div>
     </div>
   );
 }
-
