@@ -16,10 +16,7 @@ const quotes = [
 ];
 
 export const AILogo = () => (
-  <div className="w-12 h-12 relative">
-    <Image src="/ai-logo.png" alt={AI_NAME} width={48} height={48} />
-    <div className="w-2 h-2 rounded-full bg-green-500 absolute -bottom-0.5 -right-0.5"></div>
-  </div>
+  <Image src="/ai-logo.png" alt={AI_NAME} width={32} height={32} />
 );
 
 export default function ChatHeader({
@@ -34,20 +31,20 @@ export default function ChatHeader({
   }, []);
 
   return (
-    <div className="z-50 flex flex-col items-center text-center fixed top-0 w-full p-5 bg-white shadow-md">
-      {/* Peppa's Icon & Name Centered */}
-      <div className="flex flex-col items-center">
+    <div className="z-50 flex flex-col items-center fixed top-0 w-full p-4 bg-white shadow-md">
+      {/* Peppa Logo and Name on the Same Line */}
+      <div className="flex items-center gap-2">
         <AILogo />
         <p className="font-semibold text-lg">{CHAT_HEADER}</p>
       </div>
 
-      {/* Quote of the Day Section - Longer and More Visible */}
-      <div className="mt-2 p-3 bg-gray-100 rounded-lg text-center w-full max-w-2xl min-h-[120px] flex items-center justify-center shadow-md">
-        <p className="text-lg font-semibold italic">Quote of the Day: {quoteOfTheDay}</p>
+      {/* Smaller Quote Section */}
+      <div className="mt-2 px-3 py-2 bg-gray-100 rounded-md text-center w-full max-w-lg shadow-sm">
+        <p className="text-xs font-medium italic">{quoteOfTheDay}</p>
       </div>
 
-      {/* Clear Chat Button Aligned Right */}
-      <div className="absolute top-5 right-5">
+      {/* Clear Chat Button Positioned Right */}
+      <div className="absolute top-4 right-4">
         <Button
           onClick={clearMessages}
           className="gap-2 shadow-sm"
@@ -61,3 +58,4 @@ export default function ChatHeader({
     </div>
   );
 }
+
