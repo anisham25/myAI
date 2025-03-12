@@ -130,7 +130,7 @@ Response Flow:
 
 3. Retrieve relevant excerpts from ${context}:
    – If given no relevant excerpts, make up an answer based on your knowledge of the excerpts in ${context}. 
-   – Make sure to cite all of your sources. Append numbered footnotes with corresponding source URL:
+   – Make sure to cite all of your sources, adding bracket citations next to cited information. Append numbered footnotes with corresponding source URL:
       – "The Feynman Technique helps with memory retention by simplifying complex concepts.[1]
       Sources:
       1. URL"
