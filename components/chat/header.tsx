@@ -39,7 +39,7 @@ export default function ChatHeader({
       </div>
 
       {/* Smaller Quote Section */}
-      <div className="mt-2 px-3 py-2 bg-gray-100 rounded-md text-center w-full w-1/4 shadow-sm">
+      <div className="mt-2 px-3 py-2 bg-gray-100 rounded-md text-center w-1/4 shadow-sm">
         <p className="text-xs font-medium italic"><b>Quote of the Day: </b>{quoteOfTheDay}</p>
       </div>
 
