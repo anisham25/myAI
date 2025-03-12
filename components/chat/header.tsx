@@ -12,7 +12,7 @@ const quotes = [
   "It always seems impossible until it’s done. - Nelson Mandela",
   "Success is not final, failure is not fatal: it is the courage to continue that counts. - Winston Churchill",
   "Be yourself; everyone else is already taken. - Oscar Wilde",
-  "Life is what happens when you're busy making other plans. - John Lennon",
+  "Your time is limited; don't waste it living someone else's life. – Steve Jobs",
 ];
 
 export const AILogo = () => (
@@ -39,7 +39,7 @@ export default function ChatHeader({
       </div>
 
       {/* Smaller Quote Section */}
-      <div className="mt-2 px-3 py-2 bg-gray-100 rounded-md text-center w-1/4 shadow-sm">
+      <div className="mt-2 px-3 py-2 bg-gray-100 rounded-md text-center w-1/2 shadow-sm">
         <p className="text-xs font-medium italic"><b>Quote of the Day: </b>{quoteOfTheDay}</p>
       </div>
 
