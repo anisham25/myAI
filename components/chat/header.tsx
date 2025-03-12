@@ -30,7 +30,7 @@ export default function ChatHeader({
   }, []);
 
   return (
-    <div className="z-50 mb-48 flex flex-col items-center fixed top-0 w-full p-4 bg-white shadow-md">
+    <div className="z-50 flex flex-col items-center fixed top-0 w-full p-4 bg-white shadow-md">
       {/* Peppa Logo and Name on the Same Line */}
       <div className="flex items-center gap-2">
         <AILogo />
