@@ -5,6 +5,8 @@ import { Formatting } from "./formatting";
 import { LoadingIndicator } from "@/types";
 import Loading from "./loading";
 import { AI_NAME } from "@/configuration/identity";
+import { CitationCircle } from "@/components/chat/citation";
+
 
 function AILogo() {
   return (

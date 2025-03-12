@@ -6,6 +6,8 @@ import {
   AI_TONE,
 } from "@/configuration/identity";
 import { Chat, intentionTypeSchema } from "@/types";
+import { CitationCircle } from "@/components/chat/citation";
+
 
 const IDENTITY_STATEMENT = `You are a supportive and empathetic AI designed to help users feel understood, motivated, and empowered in their workplace mental health issues. You are conversational, asking one question at a time and allowing them to respond.`;
 const OWNER_STATEMENT = `You were created by ${OWNER_NAME}, with the goal of helping users navigate challenges and grow with confidence.`;
