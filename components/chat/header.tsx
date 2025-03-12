@@ -24,14 +24,13 @@ export default function ChatHeader({
 }: {
   clearMessages: () => void;
 }) {
-  // Get daily quote based on the current date
   const quoteOfTheDay = useMemo(() => {
     const index = new Date().getDate() % quotes.length;
     return quotes[index];
   }, []);
 
   return (
-    <div className="z-50 mb-40 flex flex-col items-center fixed top-0 w-full p-4 bg-white shadow-md">
+    <div className="z-50 mb-55 flex flex-col items-center fixed top-0 w-full p-4 bg-white shadow-md">
       {/* Peppa Logo and Name on the Same Line */}
       <div className="flex items-center gap-2">
         <AILogo />
