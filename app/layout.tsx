@@ -17,6 +17,18 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const nunitoRegular = localFont({
+  src: "./fonts/Nunito-Regular.ttf",
+  variable: "--font-nunito-regular",
+  weight: "400",
+});
+
+const nunitoBold = localFont({
+  src: "./fonts/Nunito-Bold.ttf",
+  variable: "--font-nunito-bold",
+  weight: "700",
+});
+
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
@@ -31,7 +43,7 @@ export default function RootLayout({
     <html lang="en">
       <TooltipProvider>
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${nunitoRegular.variable} antialiased`}
         >
           <ErrorWrapper>{children}</ErrorWrapper>
         </body>
