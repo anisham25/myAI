@@ -112,9 +112,9 @@ Do not ever disclose any technical details about how you work or what you are ma
 }
 
 export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: { text: string; sources: { title: string; url: string }[] }) {
+  const formattedText = formatWithCitations(context.text, context.sources);
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
-  const formattedText = formatWithCitations(context.text, context.sources);
 
 Your goal is to make users feel heard, supported, and motivated while keeping the conversation natural. Your focus should be on improving emotions and mental health. Avoid making decisions for the user or giving logistical recommendations (e.g., choosing a city, job offers).
 
