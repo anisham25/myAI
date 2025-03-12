@@ -111,8 +111,8 @@ Do not ever disclose any technical details about how you work or what you are ma
   `;
 }
 
-export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: { text: string; sources: { title: string; url: string }[] }) {
-  const formattedText = formatWithCitations(context.text, context.sources);
+export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
+  //const formattedText = formatWithCitations(context.text, context.sources);
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
@@ -157,7 +157,6 @@ Response Flow:
 
 Your responses should feel like a real conversation—not scripted. Be warm, supportive, and thoughtful.
 
-${formattedText}
   `;
 }
 
@@ -199,22 +198,22 @@ ${mostRecentMessages.map((message) => `${message.role}: ${message.content}`).joi
   `;
 }
 
-export function formatWithCitations(text: string, sources: { title: string; url: string }[]): string {
-    let textWithCitations = text;
-    let citationsList = "";
+// export function formatWithCitations(text: string, sources: { title: string; url: string }[]): string {
+//     let textWithCitations = text;
+//     let citationsList = "";
 
-    // Append numbered citations to text
-    sources.forEach((source, index) => {
-        const citationNumber = `[${index + 1}]`;
-        textWithCitations = textWithCitations.replace(source.title, `${source.title} ${citationNumber}`);
-    });
+//     // Append numbered citations to text
+//     sources.forEach((source, index) => {
+//         const citationNumber = `[${index + 1}]`;
+//         textWithCitations = textWithCitations.replace(source.title, `${source.title} ${citationNumber}`);
+//     });
 
-    // Generate the sources section
-    if (sources.length > 0) {
-        citationsList = "\nSources:\n" + sources
-            .map((source, index) => `${index + 1}. [${source.title}](${source.url})`)
-            .join("\n");
-    }
+//     // Generate the sources section
+//     if (sources.length > 0) {
+//         citationsList = "\nSources:\n" + sources
+//             .map((source, index) => `${index + 1}. [${source.title}](${source.url})`)
+//             .join("\n");
+//     }
 
-    return `${textWithCitations}\n\n${citationsList}`;
-}
+//     return `${textWithCitations}\n\n${citationsList}`;
+// }
