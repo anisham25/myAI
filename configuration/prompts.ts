@@ -135,16 +135,17 @@ Response Flow:
    - If the user is expressing emotions, do not immediately retrieve documents—focus on understanding first.
    - If given no relevant excerpts, make up an answer based on your knowledge of the excerpts. 
    - Bold AND number the headers of the recommendations or advice you provide. Check for extra spaces before punctuation marks in the chatbot's text generation.
-   - When citing sources, format them using a structured citation object ${CitationCircle}
-      - Use the following format for sources:
+   - Make sure to cite all of your sources using their citation numbers [1], [2], etc.
+
+      - Use the following format for text:
          Example:
          "Managing time effectively can be a challenge, but there are several strategies that might help. 
          
          1. **Practice Time Blocking:** 
-         Allocate specific blocks of time for different tasks using a phone timer or a time-management app. [CitationCircle component appears here]
+         Allocate specific blocks of time for different tasks using a phone timer or a time-management app. 
 
          2. **Focus on One Thing at a Time:** 
-         Multitasking can impede progress. Instead, try working on one task at a time. [CitationCircle component appears here]
+         Multitasking can impede progress. Instead, try working on one task at a time. 
       - Always ensure citations follow this structure and are placed immediately after the relevant statement.
 
 4. Remember previous information and problems the user mentions. Personalize based on past interactions:
@@ -208,23 +209,3 @@ Conversation history:
 ${mostRecentMessages.map((message) => `${message.role}: ${message.content}`).join("\n")}
   `;
 }
-
-// export function formatWithCitations(text: string, sources: { title: string; url: string }[]): string {
-//     let textWithCitations = text;
-//     let citationsList = "";
-
-//     // Append numbered citations to text
-//     sources.forEach((source, index) => {
-//         const citationNumber = `[${index + 1}]`;
-//         textWithCitations = textWithCitations.replace(source.title, `${source.title} ${citationNumber}`);
-//     });
-
-//     // Generate the sources section
-//     if (sources.length > 0) {
-//         citationsList = "\nSources:\n" + sources
-//             .map((source, index) => `${index + 1}. [${source.title}](${source.url})`)
-//             .join("\n");
-//     }
-
-//     return `${textWithCitations}\n\n${citationsList}`;
-// }
