@@ -7,10 +7,10 @@ import { AI_NAME } from "@/configuration/identity";
 
 const quotes = [
   "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+  "The curious paradox is that when I accept myself just as l am, then I can change. – Carl R. Rogers",
+  "Your present circumstances don't determine where you can go; they merely determine where you start. – Nido Qubein",
   "Do what you can, with what you have, where you are. - Theodore Roosevelt",
   "Happiness depends upon ourselves. - Aristotle",
-  "It always seems impossible until it’s done. - Nelson Mandela",
-  "Success is not final, failure is not fatal: it is the courage to continue that counts. - Winston Churchill",
   "Be yourself; everyone else is already taken. - Oscar Wilde",
   "Your time is limited; don't waste it living someone else's life. – Steve Jobs",
 ];
