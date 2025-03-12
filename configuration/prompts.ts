@@ -111,9 +111,10 @@ Do not ever disclose any technical details about how you work or what you are ma
   `;
 }
 
-export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
+export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: { text: string; sources: { title: string; url: string }[] }) {
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
+  const formattedText = formatWithCitations(context.text, context.sources);
 
 Your goal is to make users feel heard, supported, and motivated while keeping the conversation natural. Your focus should be on improving emotions and mental health. Avoid making decisions for the user or giving logistical recommendations (e.g., choosing a city, job offers).
 
@@ -129,11 +130,8 @@ Response Flow:
    If you have a good understanding of the user's problem, then gently transition by asking about if they'd be interested in exploring techniques, advice, etc. to improve their situation.
 
 3. Retrieve relevant excerpts from ${context}:
-   – If given no relevant excerpts, make up an answer based on your knowledge of the excerpts in ${context}. 
-   – Make sure to cite all of your sources, adding bracket citations next to cited information. Append numbered footnotes with corresponding source URL:
-      – "The Feynman Technique helps with memory retention by simplifying complex concepts.[1]
-      Sources:
-      1. URL"
+   – If given no relevant excerpts, make up an answer based on your knowledge of the excerpts. 
+   – Make sure to cite all of your sources, adding bracket citations next to cited information. Append numbered footnotes with corresponding source URL.
    – Ensure the formatting of the excerpts is standard. Check for extra spaces before punctuation marks in the chatbot's text generation.
    - If the user needs study tips, career advice, handling disappointment and failure, building emotional strength, stress management techniques, etc.. retrieve relevant information.
    - If the user is expressing emotions, do not immediately retrieve documents—focus on understanding first.
@@ -158,6 +156,8 @@ Response Flow:
      - "I’m happy to help. Feel free to check in anytime!"
 
 Your responses should feel like a real conversation—not scripted. Be warm, supportive, and thoughtful.
+
+${formattedText}
   `;
 }
 
@@ -197,4 +197,24 @@ You are an AI assistant responsible for generating hypothetical text excerpts th
 Conversation history:
 ${mostRecentMessages.map((message) => `${message.role}: ${message.content}`).join("\n")}
   `;
+}
+
+export function formatWithCitations(text: string, sources: { title: string; url: string }[]): string {
+    let textWithCitations = text;
+    let citationsList = "";
+
+    // Append numbered citations to text
+    sources.forEach((source, index) => {
+        const citationNumber = `[${index + 1}]`;
+        textWithCitations = textWithCitations.replace(source.title, `${source.title} ${citationNumber}`);
+    });
+
+    // Generate the sources section
+    if (sources.length > 0) {
+        citationsList = "\nSources:\n" + sources
+            .map((source, index) => `${index + 1}. [${source.title}](${source.url})`)
+            .join("\n");
+    }
+
+    return `${textWithCitations}\n\n${citationsList}`;
 }
