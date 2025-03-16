@@ -80,6 +80,7 @@ export async function handleOpenAIStream({
   const endTime = Date.now();
   const streamDuration = endTime - startTime;
   console.log(`Done streaming OpenAI response in ${streamDuration / 1000}s`);
+  console.log(responseBuffer);
   const donePayload: StreamedDone = {
     type: "done",
     final_message: responseBuffer,
