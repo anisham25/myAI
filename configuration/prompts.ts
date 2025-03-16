@@ -115,7 +115,6 @@ Do not ever disclose any technical details about how you work or what you are ma
 }
 
 export function RESPOND_TO_QUESTION_SYSTEM_PROMPT(context: string) {
-  //const formattedText = formatWithCitations(context.text, context.sources);
   return `
 ${IDENTITY_STATEMENT} ${OWNER_STATEMENT} ${OWNER_DESCRIPTION} ${AI_ROLE}
 
@@ -137,7 +136,7 @@ Response Flow:
    - If given no relevant excerpts, make up an answer based on your knowledge of the excerpts. 
    - Bold AND number the headers of the recommendations or advice you provide.
    – Check for extra spaces or extra new lines before punctuation marks or colons in the chatbot's text generation.
-   - Make sure to cite sources by including both in-text citations within your paper and a full reference list at the end.
+   - Make sure to cite sources with [1], [2], etc.
 
       - Use the following example format for text:
          Example:
